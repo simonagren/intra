@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "alert-notitication-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/alertNotitication/AlertNotiticationApplicationCustomizer.js",
+          "manifest": "./src/extensions/alertNotitication/AlertNotiticationApplicationCustomizer.manifest.json"
+        }
+      ]
+    },
+    "collab-footer-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/collabFooter/CollabFooterApplicationCustomizer.js",
+          "manifest": "./src/extensions/collabFooter/CollabFooterApplicationCustomizer.manifest.json"
+        }
+      ]
+    },
+    "tiles-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/tiles/TilesWebPart.js",
+          "manifest": "./src/webparts/tiles/TilesWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "AlertNotiticationApplicationCustomizerStrings": "lib/extensions/alertNotitication/loc/{locale}.js",
+    "CollabFooterApplicationCustomizerStrings": "lib/extensions/collabFooter/loc/{locale}.js",
+    "ControlStrings": "node_modules/@pnp/spfx-controls-react/lib/loc/{locale}.js",
+    "PropertyControlStrings": "node_modules/@pnp/spfx-property-controls/lib/loc/{locale}.js",
+    "TilesWebPartStrings": "lib/webparts/tiles/loc/{locale}.js"
+  }
+}
