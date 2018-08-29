@@ -1,0 +1,17 @@
+{
+    "url":"portal",
+    "title":"Sogeti Portal",
+    "description":"Sogeti Hub",
+    "children":[
+        {
+            "url":"hr",
+            "title":"Human Resources",
+            "description":"Human Resources"
+        },
+        {
+            "url":"marketing",
+            "title":"Marknad",
+            "description":"Marknadsföring"
+        }
+    ]
+}

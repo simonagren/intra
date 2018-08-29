@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<pnp:Provisioning xmlns:pnp="http://schemas.dev.office.com/PnP/2018/05/ProvisioningSchema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://schemas.dev.office.com/PnP/2018/05/ProvisioningSchema https://raw.githubusercontent.com/OfficeDev/PnP-Provisioning-Schema/master/OfficeDevPnP.ProvisioningSchema/ProvisioningSchema-2018-05.xsd">
+  <pnp:Preferences Generator="OfficeDevPnP.Core, Version=2.26.1805.0, Culture=neutral, PublicKeyToken=null" />
+  <pnp:Templates ID="CONTAINER-TEMPLATE-SnS-PortalFooter-Links">
+    <pnp:ProvisioningTemplate ID="TEMPLATE-SnS-PortalFooter-Links" Version="1" BaseSiteTemplate="SITEPAGEPUBLISHING#0" Scope="RootSite">
+      <pnp:SiteFields>
+        <Field Type="Choice" DisplayName="Länkgrupp" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" Format="Dropdown" FillInChoice="TRUE" Group="SnS Columns" ID="{f5b23751-56d4-4ec3-adf2-7b080d834f74}" SourceID="{88a250c5-31b2-4d64-b047-482e2a6e5e7a}" StaticName="SnSPortalLinkGroup" Name="SnSPortalLinkGroup" CustomFormatter="">
+          <CHOICES>
+            <CHOICE>Huvudlänkar</CHOICE>
+          </CHOICES>
+        </Field>
+        <Field Type="URL" DisplayName="LänkURL" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" Format="Hyperlink" Group="SnS Columns" ID="{c10389a0-8b29-4866-951f-3ad8e138db03}" SourceID="{88a250c5-31b2-4d64-b047-482e2a6e5e7a}" StaticName="SnSPortalLinkUrl" Name="SnSPortalLinkUrl" CustomFormatter="">
+        </Field>
+      </pnp:SiteFields>
+      <pnp:ContentTypes>
+        <pnp:ContentType ID="0x0100580DB2292968A34EA3748511017A6DD2" Name="SnSPortalLink" Description="" Group="SnS Content Types" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
+          <pnp:FieldRefs>
+            <pnp:FieldRef ID="c042a256-787d-4a6f-8a8a-cf6ab767f12d" Name="ContentType" />
+            <pnp:FieldRef ID="fa564e0f-0c70-4ab9-b863-0177e6ddd247" Name="Title" Required="true" />
+            <pnp:FieldRef ID="c10389a0-8b29-4866-951f-3ad8e138db03" Name="SnSPortalLinkUrl" />
+            <pnp:FieldRef ID="f5b23751-56d4-4ec3-adf2-7b080d834f74" Name="SnSPortalLinkGroup" />
+          </pnp:FieldRefs>
+        </pnp:ContentType>
+      </pnp:ContentTypes>
+      <pnp:Lists>
+        <pnp:ListInstance Title="SnS-PortalFooter-Länkar" Description="" DocumentTemplate="" OnQuickLaunch="false" TemplateType="100" Url="Lists/SnSPortalFooterLinks" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-de22-43b2-a848-c05709900100" ContentTypesEnabled="true" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/SnSPortalFooterLinks/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/SnSPortalFooterLinks/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/SnSPortalFooterLinks/NewForm.aspx" ImageUrl="/_layouts/15/images/itgen.png?rev=44" IsApplicationList="false" WriteSecurity="0" ValidationFormula="" ValidationMessage="">
+          <pnp:ContentTypeBindings>
+            <pnp:ContentTypeBinding ContentTypeID="0x0100580DB2292968A34EA3748511017A6DD2" Default="true" />
+            <pnp:ContentTypeBinding ContentTypeID="0x0120" />
+          </pnp:ContentTypeBindings>
+          <pnp:Views>
+            <View Name="{CB35127E-6619-49AA-85E1-D46BBFB04A06}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="Alla Objekt" Url="/sites/temp2017052301/Lists/SnSPortalFooterLinks/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=44">
+              <Query>
+                <GroupBy Collapse="TRUE" GroupLimit="30">
+                  <FieldRef Name="SnSPortalLinkGroup" />
+                </GroupBy>
+                <OrderBy>
+                  <FieldRef Name="ID" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="LinkTitle" />
+                <FieldRef Name="SnSPortalLinkGroup" />
+                <FieldRef Name="SnSPortalLinkUrl" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <Aggregations Value="Off" />
+              <JSLink>clienttemplates.js</JSLink>
+            </View>
+          </pnp:Views>
+          <pnp:Fields>
+            <Field ID="{3a6b296c-3f50-445c-a13f-9c679ea9dda3}" Hidden="FALSE" ReadOnly="TRUE" Required="FALSE" Type="Text" Name="ComplianceAssetId" ShowInFileDlg="FALSE" DisplayName="Efterlevnadstillgångs-ID" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="ComplianceAssetId" FromBaseType="TRUE" ColName="nvarchar3" />
+          </pnp:Fields>
+          <pnp:FieldRefs>
+            <pnp:FieldRef ID="c10389a0-8b29-4866-951f-3ad8e138db03" Name="SnSPortalLinkUrl" DisplayName="LänkURL" />
+            <pnp:FieldRef ID="f5b23751-56d4-4ec3-adf2-7b080d834f74" Name="SnSPortalLinkGroup" DisplayName="Länkgrupp" />
+          </pnp:FieldRefs>
+          <pnp:DataRows KeyColumn="Title" UpdateBehavior="Overwrite">
+            <pnp:DataRow>
+              <pnp:DataValue FieldName="Title">Mina kunder</pnp:DataValue>
+              <pnp:DataValue FieldName="SnSPortalLinkGroup">Applikationer</pnp:DataValue>
+              <pnp:DataValue FieldName="SnSPortalLinkUrl">https://find.customers</pnp:DataValue>
+            </pnp:DataRow>
+            <pnp:DataRow>
+              <pnp:DataValue FieldName="Title">CRM</pnp:DataValue>
+              <pnp:DataValue FieldName="SnSPortalLinkGroup">Applikationer</pnp:DataValue>
+              <pnp:DataValue FieldName="SnSPortalLinkUrl">https://company.crm</pnp:DataValue>
+            </pnp:DataRow>
+            <pnp:DataRow>
+              <pnp:DataValue FieldName="Title">ERP</pnp:DataValue>
+              <pnp:DataValue FieldName="SnSPortalLinkGroup">Applikationer</pnp:DataValue>
+              <pnp:DataValue FieldName="SnSPortalLinkUrl">https://company.erp</pnp:DataValue>
+            </pnp:DataRow>
+            <pnp:DataRow>
+              <pnp:DataValue FieldName="Title">Tekniska procedurer</pnp:DataValue>
+              <pnp:DataValue FieldName="SnSPortalLinkGroup">Applikationer</pnp:DataValue>
+              <pnp:DataValue FieldName="SnSPortalLinkUrl">https://tech.procs</pnp:DataValue>
+            </pnp:DataRow>
+            <pnp:DataRow>
+              <pnp:DataValue FieldName="Title">Utlägg</pnp:DataValue>
+              <pnp:DataValue FieldName="SnSPortalLinkGroup">Interna Moduler</pnp:DataValue>
+              <pnp:DataValue FieldName="SnSPortalLinkUrl">https://expense.report</pnp:DataValue>
+            </pnp:DataRow>
+            <pnp:DataRow>
+              <pnp:DataValue FieldName="Title">Utbyte Bil</pnp:DataValue>
+              <pnp:DataValue FieldName="SnSPortalLinkGroup">Interna Moduler</pnp:DataValue>
+              <pnp:DataValue FieldName="SnSPortalLinkUrl">https://need.new.car</pnp:DataValue>
+            </pnp:DataRow>
+            <pnp:DataRow>
+              <pnp:DataValue FieldName="Title">Semester</pnp:DataValue>
+              <pnp:DataValue FieldName="SnSPortalLinkGroup">Interna Moduler</pnp:DataValue>
+              <pnp:DataValue FieldName="SnSPortalLinkUrl">https://need.some.rest</pnp:DataValue>
+            </pnp:DataRow>
+            <pnp:DataRow>
+              <pnp:DataValue FieldName="Title">Aftonbladet</pnp:DataValue>
+              <pnp:DataValue FieldName="SnSPortalLinkGroup">Nyheter</pnp:DataValue>
+              <pnp:DataValue FieldName="SnSPortalLinkUrl">https://www.cnn.com/</pnp:DataValue>
+            </pnp:DataRow>
+            <pnp:DataRow>
+              <pnp:DataValue FieldName="Title">VK</pnp:DataValue>
+              <pnp:DataValue FieldName="PnPPortalLinkGroup">Nyheter</pnp:DataValue>
+              <pnp:DataValue FieldName="PnPPortalLinkUrl">https://www.bbc.co.uk/</pnp:DataValue>
+            </pnp:DataRow>
+            <pnp:DataRow>
+              <pnp:DataValue FieldName="Title">DI</pnp:DataValue>
+              <pnp:DataValue FieldName="PnPPortalLinkGroup">Nyheter</pnp:DataValue>
+              <pnp:DataValue FieldName="PnPPortalLinkUrl">https://www.nytimes.com/</pnp:DataValue>
+            </pnp:DataRow>
+            <pnp:DataRow>
+              <pnp:DataValue FieldName="Title">DN</pnp:DataValue>
+              <pnp:DataValue FieldName="PnPPortalLinkGroup">Nyheter</pnp:DataValue>
+              <pnp:DataValue FieldName="PnPPortalLinkUrl">http://www.forbes.com/</pnp:DataValue>
+            </pnp:DataRow>
+          </pnp:DataRows>
+        </pnp:ListInstance>
+      </pnp:Lists>
+    </pnp:ProvisioningTemplate>
+  </pnp:Templates>
+</pnp:Provisioning>
